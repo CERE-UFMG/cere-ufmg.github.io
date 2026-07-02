@@ -1,0 +1,14 @@
+{
+  "livePreview.defaultPreviewPath": "index.html",
+  "livePreview.portNumber": 3000,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.html": "html",
+    "*.css": "css",
+    "*.js": "javascript"
+  },
+  "emmet.includeLanguages": {
+    "html": "html"
+  }
+}
