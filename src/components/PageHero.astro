@@ -1,0 +1,43 @@
+---
+interface Crumb {
+  pt: string;
+  en?: string;
+  href?: string;
+}
+
+interface Props {
+  // Trilha exibida após "CERE ›". Itens com `href` viram links.
+  crumbs: Crumb[];
+  titlePt: string;
+  titleEn: string;
+  subtitlePt: string;
+  subtitleEn: string;
+}
+
+const { crumbs, titlePt, titleEn, subtitlePt, subtitleEn } = Astro.props;
+---
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="/">CERE</a><span class="sep">›</span>
+      {crumbs.map((crumb, i) => (
+        <>
+          {crumb.href ? (
+            <a href={crumb.href}>
+              <span data-lang="pt">{crumb.pt}</span>{crumb.en && <span data-lang="en">{crumb.en}</span>}
+            </a>
+          ) : (
+            <>
+              <span data-lang="pt">{crumb.pt}</span>{crumb.en && <span data-lang="en">{crumb.en}</span>}
+            </>
+          )}
+          {i < crumbs.length - 1 && <span class="sep">›</span>}
+        </>
+      ))}
+    </div>
+    <h1 data-lang="pt">{titlePt}</h1>
+    <h1 data-lang="en">{titleEn}</h1>
+    <p class="subtitle" data-lang="pt">{subtitlePt}</p>
+    <p class="subtitle" data-lang="en">{subtitleEn}</p>
+  </div>
+</div>

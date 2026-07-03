@@ -1,0 +1,107 @@
+---
+const path = Astro.url.pathname;
+
+// Marca o item de navegação da seção atual (equivale à classe `current`
+// escrita à mão em cada página do site original).
+const isCurrent = (section: string) => path.startsWith(section);
+---
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-logo">
+      <div class="logo-institutional">
+        <img src="https://face.ufmg.br/images/template/ufmg.fw.png" alt="UFMG" class="logo-ufmg">
+        <div class="logo-affiliates">
+          <img src="https://face.ufmg.br/images/template/face.png" alt="FACE" class="logo-affiliate">
+          <img src="https://site.ipead.face.ufmg.br/wp-content/uploads/2023/01/Logo-ipead-02.png" alt="IPEAD" class="logo-affiliate">
+        </div>
+      </div>
+      <div class="logo-divider"></div>
+      <div class="logo-accent"></div>
+      <div class="logo-text">
+        <span class="logo-cere">CERE</span>
+        <span class="logo-name" data-lang="pt">Centro de Estudos em Real Estate</span>
+        <span class="logo-name" data-lang="en">Real Estate Studies Center</span>
+      </div>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li><a href="/" data-lang="pt">Início</a><a href="/" data-lang="en">Home</a></li>
+
+        <li class:list={['has-dropdown', { current: isCurrent('/sobre/') }]}>
+          <a href="/sobre/">
+            <span data-lang="pt">Sobre nós</span><span data-lang="en">About us</span>
+            <span class="chevron">▾</span>
+          </a>
+          <ul class="dropdown">
+            <li><a href="/sobre/#missao"><span data-lang="pt">Missão</span><span data-lang="en">Mission</span></a></li>
+            <li><a href="/sobre/#pessoas"><span data-lang="pt">Pessoas</span><span data-lang="en">People</span></a></li>
+          </ul>
+        </li>
+
+        <li class:list={['has-dropdown', { current: isCurrent('/educacao/') }]}>
+          <a href="/educacao/">
+            <span data-lang="pt">Educação</span><span data-lang="en">Education</span>
+            <span class="chevron">▾</span>
+          </a>
+          <ul class="dropdown">
+            <li><a href="/educacao/#graduacao"><span data-lang="pt">Disciplinas de graduação</span><span data-lang="en">Undergraduate courses</span></a></li>
+            <li><a href="/educacao/#formacao-capacitacao"><span data-lang="pt">Programas de formação e capacitação</span><span data-lang="en">Training and capacity-building programs</span></a></li>
+          </ul>
+        </li>
+
+        <li class:list={['has-dropdown', { current: isCurrent('/pesquisa/') }]}>
+          <a href="/pesquisa/">
+            <span data-lang="pt">Pesquisa</span><span data-lang="en">Research</span>
+            <span class="chevron">▾</span>
+          </a>
+          <ul class="dropdown">
+            <li><a href="/pesquisa/#publicacoes"><span data-lang="pt">Publicações</span><span data-lang="en">Publications</span></a></li>
+            <li><a href="/pesquisa/#vetores"><span data-lang="pt">Vetores de pesquisa</span><span data-lang="en">Research areas</span></a></li>
+          </ul>
+        </li>
+
+        <li class:list={['has-dropdown', { current: isCurrent('/midia/') }]}>
+          <a href="/midia/">
+            <span data-lang="pt">Mídia e Eventos</span><span data-lang="en">Media & Events</span>
+            <span class="chevron">▾</span>
+          </a>
+          <ul class="dropdown">
+            <li><a href="/midia/#noticias"><span data-lang="pt">Notícias</span><span data-lang="en">News</span></a></li>
+            <li><a href="/midia/#eventos"><span data-lang="pt">Eventos</span><span data-lang="en">Events</span></a></li>
+          </ul>
+        </li>
+
+        <li class:list={['has-dropdown', { current: isCurrent('/dados/') }]}>
+          <a href="/dados/">
+            <span data-lang="pt">Dados</span><span data-lang="en">Data</span>
+            <span class="chevron">▾</span>
+          </a>
+          <ul class="dropdown">
+            <li><a href="/dados/#indice-precos"><span data-lang="pt">Índice de Preços Imobiliários</span><span data-lang="en">Real Estate Price Index</span></a></li>
+            <li><a href="/dados/#notas-mercado"><span data-lang="pt">Notas ao Mercado e Policy Briefings</span><span data-lang="en">Market Notes & Policy Briefings</span></a></li>
+          </ul>
+        </li>
+
+        <li class:list={[{ current: isCurrent('/parcerias/') }]}><a href="/parcerias/"><span data-lang="pt">Parcerias</span><span data-lang="en">Partnerships</span></a></li>
+
+        <li class:list={['has-dropdown', { current: isCurrent('/estudantes/') }]}>
+          <a href="/estudantes/">
+            <span data-lang="pt">Estudantes</span><span data-lang="en">Students</span>
+            <span class="chevron">▾</span>
+          </a>
+          <ul class="dropdown">
+            <li><a href="/estudantes/#finance-club">UFMG Finance Club</a></li>
+            <li><a href="/estudantes/#ucj"><span data-lang="pt">UFMG Consultoria Júnior (UCJ)</span><span data-lang="en">UFMG Junior Consulting (UCJ)</span></a></li>
+          </ul>
+        </li>
+
+        <li><a href="/sobre/#contato"><span data-lang="pt">Contato</span><span data-lang="en">Contact us</span></a></li>
+      </ul>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

@@ -1,8 +1,6 @@
 {
   "recommendations": [
-    "ms-vscode.live-server",
-    "esbenp.prettier-vscode",
-    "formulahendry.auto-rename-tag",
-    "ecmel.vscode-html-css"
+    "astro-build.astro-vscode",
+    "esbenp.prettier-vscode"
   ]
 }

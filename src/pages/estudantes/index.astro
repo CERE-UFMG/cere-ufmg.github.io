@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+---
+<BaseLayout
+  title="Estudantes — CERE | UFMG"
+  description="UFMG Finance Club e UFMG Consultoria Júnior — organizações parceiras do CERE."
+>
+
+  <PageHero
+    crumbs={[{ pt: 'Estudantes', en: 'Students' }]}
+    titlePt="Estudantes"
+    titleEn="Students"
+    subtitlePt="Organizações estudantis parceiras do CERE."
+    subtitleEn="Student organizations partnered with CERE."
+  />
+
+  <!-- UFMG FINANCE CLUB -->
+  <section class="section" id="finance-club">
+    <div class="container">
+      <div class="section-header left">
+        <p class="eyebrow" data-lang="pt">Organização parceira</p>
+        <p class="eyebrow" data-lang="en">Partner organization</p>
+        <h2 class="section-title">UFMG Finance Club</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="prose">
+        <p data-lang="pt">Fundado em 2017, o <strong>UFMG Finance Club</strong> é a liga de mercado financeiro da UFMG, sem fins lucrativos, dedicada a potencializar o desenvolvimento profissional de seus membros por meio de reuniões semanais, cursos técnicos (Excel, VBA, valuation), palestras com profissionais do mercado e preparação para certificações financeiras (CEA, CFA).</p>
+        <p data-lang="en">Founded in 2017, the <strong>UFMG Finance Club</strong> is UFMG's nonprofit financial markets league, dedicated to advancing members' professional development through weekly meetings, technical courses (Excel, VBA, valuation), talks with market professionals, and preparation for financial certifications (CEA, CFA).</p>
+      </div>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+        <a href="https://www.instagram.com/ufmgfinanceclub/" target="_blank" rel="noopener" class="btn btn-primary">Instagram</a>
+        <a href="https://www.linkedin.com/company/ufmgfinanceclub" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UFMG CONSULTORIA JÚNIOR (UCJ) -->
+  <section class="section bg-light" id="ucj">
+    <div class="container">
+      <div class="section-header left">
+        <p class="eyebrow" data-lang="pt">Organização parceira</p>
+        <p class="eyebrow" data-lang="en">Partner organization</p>
+        <h2 class="section-title" data-lang="pt">UFMG Consultoria Júnior (UCJ)</h2>
+        <h2 class="section-title" data-lang="en">UFMG Junior Consulting (UCJ)</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="prose">
+        <p data-lang="pt">Fundada em 1992, a <strong>UFMG Consultoria Júnior (UCJ)</strong> é a empresa júnior da Faculdade de Ciências Econômicas, formada por estudantes de Ciências Econômicas, Ciências Contábeis, Relações Econômicas Internacionais e Controladoria e Finanças. Oferece consultoria de gestão personalizada para empresas de diversos portes, com mais de 900 projetos realizados em áreas como planejamento estratégico, marketing, processos, gestão financeira e recursos humanos.</p>
+        <p data-lang="en">Founded in 1992, <strong>UFMG Consultoria Júnior (UCJ)</strong> is the junior enterprise of the Faculty of Economic Sciences, made up of students from Economics, Accounting, International Economic Relations, and Controllership and Finance. It offers tailored management consulting for companies of all sizes, with more than 900 projects delivered in strategic planning, marketing, process optimization, financial management, and human resources.</p>
+      </div>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+        <a href="https://ucj.com.br" target="_blank" rel="noopener" class="btn btn-primary" data-lang="pt">Site</a>
+        <a href="https://ucj.com.br" target="_blank" rel="noopener" class="btn btn-primary" data-lang="en">Website</a>
+        <a href="https://www.instagram.com/ucj.consultoria/" target="_blank" rel="noopener" class="btn btn-ghost">Instagram</a>
+        <a href="https://www.linkedin.com/company/ufmg-consultoria-jr./" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer>
+    <div class="footer-col">
+      <h4 data-lang="pt">Estudantes</h4><h4 data-lang="en">Students</h4>
+      <ul>
+        <li><a href="#finance-club">UFMG Finance Club</a></li>
+        <li><a href="#ucj">UFMG Consultoria Júnior (UCJ)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Educação & Pesquisa</h4><h4 data-lang="en">Education & Research</h4>
+      <ul>
+        <li><a href="/educacao/"><span data-lang="pt">Educação</span><span data-lang="en">Education</span></a></li>
+        <li><a href="/pesquisa/"><span data-lang="pt">Pesquisa</span><span data-lang="en">Research</span></a></li>
+        <li><a href="/dados/"><span data-lang="pt">Dados de mercado</span><span data-lang="en">Market data</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Links úteis</h4><h4 data-lang="en">Useful links</h4>
+      <ul>
+        <li><a href="/parcerias/"><span data-lang="pt">Parcerias</span><span data-lang="en">Partnerships</span></a></li>
+        <li><a href="https://face.ufmg.br" target="_blank" rel="noopener">FACE · UFMG</a></li>
+      </ul>
+    </div>
+  </Footer>
+
+</BaseLayout>

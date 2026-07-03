@@ -1,0 +1,168 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+import { getNoticias } from '../../lib/noticias';
+
+const eventos = await getCollection('eventos');
+
+const noticias = await Promise.all(
+  (await getNoticias()).map(async (noticia) => ({
+    ...noticia,
+    ContentPt: noticia.pt ? (await render(noticia.pt)).Content : null,
+    ContentEn: noticia.en ? (await render(noticia.en)).Content : null,
+  }))
+);
+---
+<BaseLayout
+  title="Mídia e Eventos — CERE | UFMG"
+  description="Notícias e eventos do Centro de Estudos em Real Estate da UFMG."
+>
+
+  <PageHero
+    crumbs={[{ pt: 'Mídia e Eventos', en: 'Media & Events' }]}
+    titlePt="Mídia e Eventos"
+    titleEn="Media & Events"
+    subtitlePt="Notícias e agenda de eventos do CERE."
+    subtitleEn="CERE news and events calendar."
+  />
+
+  <!-- NOTÍCIAS -->
+  <section class="section" id="noticias">
+    <div class="container">
+      <div class="section-header left">
+        <p class="eyebrow" data-lang="pt">Notícias</p>
+        <p class="eyebrow" data-lang="en">News</p>
+        <h2 class="section-title" data-lang="pt">Últimas notícias</h2>
+        <h2 class="section-title" data-lang="en">Latest news</h2>
+        <div class="divider"></div>
+      </div>
+      {noticias.map(({ pt, en, ContentPt, ContentEn }) => (
+        <div class="card noticia">
+          <div class="card-img" style="background:var(--navy-dark);display:flex;align-items:center;justify-content:center;">
+            <span style="color:rgba(255,255,255,.3);font-size:2rem;">📰</span>
+          </div>
+          <div class="card-body" style="padding:2rem;">
+            {pt && <span class="card-tag" data-lang="pt">{pt.data.tag}</span>}
+            {en && <span class="card-tag" data-lang="en">{en.data.tag}</span>}
+            {pt && <h3 class="card-title" data-lang="pt" style="font-size:1.3rem;">{pt.data.titulo}</h3>}
+            {en && <h3 class="card-title" data-lang="en" style="font-size:1.3rem;">{en.data.titulo}</h3>}
+            {ContentPt && <div class="noticia-corpo" data-lang="pt"><ContentPt /></div>}
+            {ContentEn && <div class="noticia-corpo" data-lang="en"><ContentEn /></div>}
+            {pt && <p class="card-date" data-lang="pt">{pt.data.dataExibicao}</p>}
+            {en && <p class="card-date" data-lang="en">{en.data.dataExibicao}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- EVENTOS -->
+  <section class="section bg-light" id="eventos">
+    <div class="container">
+      <div class="section-header left">
+        <p class="eyebrow" data-lang="pt">Eventos</p>
+        <p class="eyebrow" data-lang="en">Events</p>
+        <h2 class="section-title" data-lang="pt">Ciclo de Seminários CERE — Universidade e Mercado Imobiliário</h2>
+        <h2 class="section-title" data-lang="en">CERE Seminar Series — University and Real Estate Market</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:3rem;">
+        <div class="prose">
+          <p data-lang="pt">Promover um ciclo de seminários voltado à aproximação entre universidade e mercado imobiliário, discutindo aplicações práticas de temas como economia das cidades, bases de dados imobiliárias e espaciais, desenvolvimento urbano, financiamento imobiliário, macroeconomia imobiliária, tecnologia e carreiras no setor.</p>
+          <p data-lang="en">Promote a seminar series aimed at bringing the university closer to the real estate market, discussing practical applications of topics such as urban economics, real estate and spatial databases, urban development, real estate financing, real estate macroeconomics, technology, and careers in the sector.</p>
+        </div>
+        <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:2rem;">
+          <h3 style="color:var(--navy);font-weight:700;margin-bottom:1rem;font-size:1rem;" data-lang="pt">A iniciativa busca:</h3>
+          <h3 style="color:var(--navy);font-weight:700;margin-bottom:1rem;font-size:1rem;" data-lang="en">The initiative seeks to:</h3>
+          <ul style="list-style:none;">
+            <li style="padding:.6rem 0;border-bottom:1px solid var(--gray-200);display:flex;gap:.75rem;align-items:start;">
+              <span style="color:var(--red);font-weight:700;flex-shrink:0;">→</span>
+              <span data-lang="pt">Expor estudantes a aplicações práticas e experiências profissionais em Real Estate (finanças, incorporação, construção, setor imobiliário e tecnologia aplicada).</span>
+              <span data-lang="en">Expose students to practical applications and professional experiences in Real Estate (finance, development, construction, the real estate sector, and applied technology).</span>
+            </li>
+            <li style="padding:.6rem 0;border-bottom:1px solid var(--gray-200);display:flex;gap:.75rem;align-items:start;">
+              <span style="color:var(--red);font-weight:700;flex-shrink:0;">→</span>
+              <span data-lang="pt">Discutir aplicações práticas de conceitos econômicos e urbanos, frequentemente utilizando Belo Horizonte e sua região metropolitana como estudo de caso.</span>
+              <span data-lang="en">Discuss practical applications of economic and urban concepts, frequently using Belo Horizonte and its metropolitan region as a case study.</span>
+            </li>
+            <li style="padding:.6rem 0;border-bottom:1px solid var(--gray-200);display:flex;gap:.75rem;align-items:start;">
+              <span style="color:var(--red);font-weight:700;flex-shrink:0;">→</span>
+              <span data-lang="pt">Ampliar espaço de diálogo entre academia, mercado imobiliário e formuladores de política.</span>
+              <span data-lang="en">Expand the space for dialogue between academia, the real estate market, and policymakers.</span>
+            </li>
+            <li style="padding:.6rem 0;display:flex;gap:.75rem;align-items:start;">
+              <span style="color:var(--red);font-weight:700;flex-shrink:0;">→</span>
+              <span data-lang="pt">Fortalecer a UFMG como espaço de desenvolvimento de pesquisa de ponta em economia urbana e mercado imobiliário.</span>
+              <span data-lang="en">Strengthen UFMG as a hub for cutting-edge research in urban economics and the real estate market.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:1.5rem;" data-lang="pt">Seminários do ciclo</h3>
+      <h3 style="font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:1.5rem;" data-lang="en">Seminars in the series</h3>
+      <div class="grid grid-auto">
+        {eventos.map((evento) => (
+          <div class="card">
+            <div class="card-body">
+              <span class="card-tag" data-lang="pt">{evento.data.tag_pt}</span><span class="card-tag" data-lang="en">{evento.data.tag_en}</span>
+              <h3 class="card-title" data-lang="pt">{evento.data.titulo_pt}</h3>
+              <h3 class="card-title" data-lang="en">{evento.data.titulo_en}</h3>
+              <p class="card-date" data-lang="pt">{evento.data.data_pt}</p>
+              <p class="card-date" data-lang="en">{evento.data.data_en}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer>
+    <div class="footer-col">
+      <h4 data-lang="pt">Mídia</h4><h4 data-lang="en">Media</h4>
+      <ul>
+        <li><a href="#noticias"><span data-lang="pt">Notícias</span><span data-lang="en">News</span></a></li>
+        <li><a href="#eventos"><span data-lang="pt">Eventos</span><span data-lang="en">Events</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Educação & Pesquisa</h4><h4 data-lang="en">Education & Research</h4>
+      <ul>
+        <li><a href="/educacao/"><span data-lang="pt">Educação</span><span data-lang="en">Education</span></a></li>
+        <li><a href="/pesquisa/"><span data-lang="pt">Pesquisa</span><span data-lang="en">Research</span></a></li>
+        <li><a href="/dados/"><span data-lang="pt">Dados de mercado</span><span data-lang="en">Market data</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Links úteis</h4><h4 data-lang="en">Useful links</h4>
+      <ul>
+        <li><a href="/sobre/"><span data-lang="pt">Sobre o CERE</span><span data-lang="en">About CERE</span></a></li>
+        <li><a href="/parcerias/"><span data-lang="pt">Parcerias</span><span data-lang="en">Partnerships</span></a></li>
+        <li><a href="https://face.ufmg.br" target="_blank" rel="noopener">FACE · UFMG</a></li>
+      </ul>
+    </div>
+  </Footer>
+
+</BaseLayout>
+
+<style>
+  /* Espaçamento entre notícias quando houver mais de uma. */
+  .noticia + .noticia {
+    margin-top: 2rem;
+  }
+
+  /* Reproduz o estilo dos parágrafos `.card-text` do site original
+     para o corpo em Markdown das notícias. */
+  .noticia-corpo :global(p) {
+    font-size: .88rem;
+    color: var(--gray-500);
+    line-height: 1.55;
+  }
+
+  .noticia-corpo :global(p + p) {
+    margin-top: .75rem;
+  }
+</style>

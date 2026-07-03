@@ -1,0 +1,43 @@
+# Eventos do Ciclo de Seminários CERE.
+# Para adicionar um evento, copie um bloco (de "- id:" até "data_en:")
+# e edite os textos. A ordem daqui é a ordem exibida no site;
+# a página inicial mostra os três primeiros.
+- id: seminario-1
+  tag_pt: Seminário 1
+  tag_en: Seminar 1
+  titulo_pt: "Macroeconomia Imobiliária: Ciclos, Tendências e Cenários para o mercado imobiliário no Brasil e em Minas Gerais"
+  titulo_en: "Real Estate Macroeconomics: Cycles, Trends, and Scenarios for the Real Estate Market in Brazil and Minas Gerais"
+  data_pt: Data a ser divulgada em breve
+  data_en: Date to be announced soon
+
+- id: seminario-2
+  tag_pt: Seminário 2
+  tag_en: Seminar 2
+  titulo_pt: Produção Imobiliária e Desenvolvimento de Projetos
+  titulo_en: Real Estate Production and Project Development
+  data_pt: Data a ser divulgada em breve
+  data_en: Date to be announced soon
+
+- id: seminario-3
+  tag_pt: Seminário 3
+  tag_en: Seminar 3
+  titulo_pt: Investimentos e Mercado de Capitais Imobiliário
+  titulo_en: Real Estate Investments and Capital Markets
+  data_pt: Data a ser divulgada em breve
+  data_en: Date to be announced soon
+
+- id: seminario-4
+  tag_pt: Seminário 4
+  tag_en: Seminar 4
+  titulo_pt: Dados, Tecnologia e Inteligência de Mercado Imobiliário
+  titulo_en: Real Estate Market Data, Technology, and Intelligence
+  data_pt: Data a ser divulgada em breve
+  data_en: Date to be announced soon
+
+- id: seminario-5
+  tag_pt: Seminário 5
+  tag_en: Seminar 5
+  titulo_pt: Carreiras no Mercado Imobiliário e de Investimentos
+  titulo_en: Careers in Real Estate and Investment Markets
+  data_pt: Data a ser divulgada em breve
+  data_en: Date to be announced soon

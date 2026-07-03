@@ -1,0 +1,293 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+import { getNoticias } from '../lib/noticias';
+
+const noticias = (await getNoticias()).slice(0, 3);
+const eventos = (await getCollection('eventos')).slice(0, 3);
+---
+<BaseLayout
+  title="CERE — Centro de Estudos em Real Estate | UFMG"
+  description="Centro de Estudos em Real Estate da Faculdade de Ciências Econômicas da UFMG. Pesquisa, educação e dados sobre o mercado imobiliário."
+>
+
+  <!-- ===== VIDEO HERO ===== -->
+  <section class="video-hero">
+    <div class="video-bg-wrapper">
+      <!-- Pexels free-license drone footage of Belo Horizonte (no ads, no platform dependency) -->
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="https://videos.pexels.com/video-files/33932750/14399596_1920_1080_30fps.mp4" type="video/mp4">
+        <source src="https://videos.pexels.com/video-files/32838879/13996956_1920_1080_30fps.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-overlay"></div>
+    <div class="video-content">
+      <h1 data-lang="pt">Excelência em Pesquisa e <em>Educação</em> em Real Estate</h1>
+      <h1 data-lang="en">Excellence in <em>Real Estate</em> Research and Education</h1>
+      <p class="video-mission" data-lang="pt">Conectar universidade, mercado e sociedade para desenvolver conhecimento aplicado em economia urbana, mercado imobiliário e investimentos, formando lideranças, promovendo inovação e contribuindo para o desenvolvimento sustentável das cidades.</p>
+      <p class="video-mission" data-lang="en">Connecting university, market, and society to develop applied knowledge in urban economics, real estate, and investments — training leaders, fostering innovation, and contributing to the sustainable development of cities.</p>
+      <div class="hero-cta">
+        <a href="/pesquisa/" class="btn btn-primary" data-lang="pt">Nossas pesquisas</a>
+        <a href="/pesquisa/" class="btn btn-primary" data-lang="en">Our research</a>
+        <a href="/sobre/" class="btn btn-outline" data-lang="pt">Conheça o CERE</a>
+        <a href="/sobre/" class="btn btn-outline" data-lang="en">About CERE</a>
+      </div>
+    </div>
+    <div class="video-scroll-hint" aria-hidden="true">
+      <span data-lang="pt">Explore</span><span data-lang="en">Explore</span>
+    </div>
+  </section>
+
+
+  <!-- ===== SOBRE O CERE ===== -->
+  <section class="section bg-light">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+        <div>
+          <p class="eyebrow" data-lang="pt">Sobre o CERE</p>
+          <p class="eyebrow" data-lang="en">About CERE</p>
+          <h2 class="section-title" data-lang="pt">Conhecimento aplicado ao mercado imobiliário</h2>
+          <h2 class="section-title" data-lang="en">Applied knowledge for the real estate market</h2>
+          <div class="divider"></div>
+          <p data-lang="pt" style="color:var(--gray-700);margin-bottom:1rem;">Fundado na Faculdade de Ciências Econômicas da UFMG, o CERE dedica-se à geração de conhecimento científico rigoroso sobre o mercado imobiliário brasileiro, com foco em Belo Horizonte e Minas Gerais.</p>
+          <p data-lang="en" style="color:var(--gray-700);margin-bottom:1rem;">Founded at UFMG's Faculty of Economic Sciences, CERE is dedicated to generating rigorous scientific knowledge about the Brazilian real estate market, with a focus on Belo Horizonte and Minas Gerais.</p>
+          <p data-lang="pt" style="color:var(--gray-700);margin-bottom:1.5rem;">Nosso trabalho conecta academia, setor privado e poder público para produzir análises, indicadores e propostas que contribuem com o desenvolvimento sustentável do setor.</p>
+          <p data-lang="en" style="color:var(--gray-700);margin-bottom:1.5rem;">Our work connects academia, the private sector, and government to produce analyses, indicators, and proposals that contribute to the sustainable development of the sector.</p>
+          <a href="/sobre/" class="btn btn-ghost" data-lang="pt">Saiba mais sobre nós</a>
+          <a href="/sobre/" class="btn btn-ghost" data-lang="en">Learn more about us</a>
+        </div>
+        <div style="background:var(--navy);border-radius:var(--radius);padding:2.5rem;color:white;">
+          <p class="eyebrow" style="color:rgba(255,255,255,.6);" data-lang="pt">Nossa missão</p>
+          <p class="eyebrow" style="color:rgba(255,255,255,.6);" data-lang="en">Our mission</p>
+          <p data-lang="pt" style="font-size:1.2rem;font-family:var(--font-serif);line-height:1.5;margin-top:.75rem;">"Produzir e disseminar conhecimento de excelência em real estate, formando profissionais e líderes comprometidos com o desenvolvimento do setor imobiliário e com o bem-estar social."</p>
+          <p data-lang="en" style="font-size:1.2rem;font-family:var(--font-serif);line-height:1.5;margin-top:.75rem;">"To produce and disseminate excellence in real estate knowledge, training professionals and leaders committed to sector development and social well-being."</p>
+          <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.15);">
+            <p style="font-size:.8rem;color:rgba(255,255,255,.5);" data-lang="pt">Faculdade de Ciências Econômicas · UFMG</p>
+            <p style="font-size:.8rem;color:rgba(255,255,255,.5);" data-lang="en">Faculty of Economic Sciences · UFMG</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ÁREAS ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow" data-lang="pt">O que fazemos</p>
+        <p class="eyebrow" data-lang="en">What we do</p>
+        <h2 class="section-title" data-lang="pt">Nossas áreas de atuação</h2>
+        <h2 class="section-title" data-lang="en">Our areas of expertise</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="grid grid-4">
+
+        <div class="feature-card">
+          <div class="feature-icon">🎓</div>
+          <h3 data-lang="pt">Educação</h3>
+          <h3 data-lang="en">Education</h3>
+          <p data-lang="pt">Disciplinas de graduação, programas de mestrado e educação executiva para profissionais do setor.</p>
+          <p data-lang="en">Undergraduate courses, master's programs, and executive education for real estate professionals.</p>
+          <a href="/educacao/" class="card-link" data-lang="pt">Ver programas</a>
+          <a href="/educacao/" class="card-link" data-lang="en">View programs</a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔬</div>
+          <h3 data-lang="pt">Pesquisa</h3>
+          <h3 data-lang="en">Research</h3>
+          <p data-lang="pt">Publicações científicas e vetores de pesquisa em economia imobiliária, finanças e mercado de capitais.</p>
+          <p data-lang="en">Scientific publications and research in real estate economics, finance, and capital markets.</p>
+          <a href="/pesquisa/" class="card-link" data-lang="pt">Ver publicações</a>
+          <a href="/pesquisa/" class="card-link" data-lang="en">View publications</a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3 data-lang="pt">Dados e Indicadores</h3>
+          <h3 data-lang="en">Data & Indicators</h3>
+          <p data-lang="pt">Pesquisa periódica do mercado imobiliário de Belo Horizonte com dados históricos e análises setoriais.</p>
+          <p data-lang="en">Periodic Belo Horizonte real estate market research with historical data and sector analysis.</p>
+          <a href="/dados/" class="card-link" data-lang="pt">Ver dados</a>
+          <a href="/dados/" class="card-link" data-lang="en">View data</a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3 data-lang="pt">Parcerias</h3>
+          <h3 data-lang="en">Partnerships</h3>
+          <p data-lang="pt">Colaboração com empresas, entidades do setor e agências de fomento para pesquisas e projetos aplicados.</p>
+          <p data-lang="en">Collaboration with companies, sector entities, and funding agencies for applied research and projects.</p>
+          <a href="/parcerias/" class="card-link" data-lang="pt">Seja parceiro</a>
+          <a href="/parcerias/" class="card-link" data-lang="en">Become a partner</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PUBLICAÇÕES RECENTES ===== -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow" data-lang="pt">Pesquisa</p>
+        <p class="eyebrow" data-lang="en">Research</p>
+        <h2 class="section-title" data-lang="pt">Publicações recentes</h2>
+        <h2 class="section-title" data-lang="en">Recent publications</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <div class="pub-meta">
+            <span class="pub-type" data-lang="pt">Artigo</span>
+            <span class="pub-type" data-lang="en">Article</span>
+            <span>2025</span>
+            <span>Real Estate</span>
+          </div>
+          <p class="pub-title"><a href="https://doi.org/10.3390/realestate2030007" target="_blank" rel="noopener">Intra-Urban Real Estate Cycles and Spatial Endogenous Regimes: Theory and Some Evidence</a></p>
+          <p class="pub-authors">Andrade, J. V. S.; Almeida, R. P.</p>
+        </div>
+        <div class="pub-item">
+          <div class="pub-meta">
+            <span class="pub-type">Working paper</span>
+            <span>2025</span>
+            <span>Textos para Discussão Cedeplar-UFMG, nº 687</span>
+          </div>
+          <p class="pub-title"><a href="https://ideas.repec.org/p/cdp/texdis/td687.html" target="_blank" rel="noopener">Discovering Tax Evasion in the Brazilian Residential Rental Market</a></p>
+          <p class="pub-authors">Nabuco, A. L.; Paixão, L. A.; Brandão, M. de B.; Almeida, R. P.</p>
+        </div>
+        <div class="pub-item">
+          <div class="pub-meta">
+            <span class="pub-type">Preprint</span>
+            <span>2025</span>
+            <span>Research Square</span>
+          </div>
+          <p class="pub-title"><a href="https://www.researchsquare.com/article/rs-8971207/v1" target="_blank" rel="noopener">Macroeconomic Shocks and Housing Prices: Intra-Urban Submarket Asymmetries</a></p>
+          <p class="pub-authors">Andrade, J. V. S.; Almeida, R. P.; Ribeiro, R. S. M.; Amaral, P. V. M.</p>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="/pesquisa/#publicacoes" class="btn btn-ghost" data-lang="pt">Ver todas as publicações</a>
+        <a href="/pesquisa/#publicacoes" class="btn btn-ghost" data-lang="en">View all publications</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOTÍCIAS E EVENTOS ===== -->
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;">
+
+        <div>
+          <div class="section-header left">
+            <p class="eyebrow" data-lang="pt">Últimas notícias</p>
+            <p class="eyebrow" data-lang="en">Latest news</p>
+            <h2 class="section-title" data-lang="pt">Notícias</h2>
+            <h2 class="section-title" data-lang="en">News</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="news-list">
+            {noticias.map((noticia) => (
+              <div class="news-item">
+                <div class="news-body" style="flex:1;">
+                  {noticia.pt && <p class="news-tag" data-lang="pt">{noticia.pt.data.tag}</p>}
+                  {noticia.en && <p class="news-tag" data-lang="en">{noticia.en.data.tag}</p>}
+                  <p class="news-title">
+                    {noticia.pt && <a href="/midia/#noticias" data-lang="pt">{noticia.pt.data.titulo}</a>}
+                    {noticia.en && <a href="/midia/#noticias" data-lang="en">{noticia.en.data.titulo}</a>}
+                  </p>
+                  {noticia.pt && <p style="font-size:.78rem;color:var(--gray-500);margin-top:.3rem;" data-lang="pt">{noticia.pt.data.dataExibicao}</p>}
+                  {noticia.en && <p style="font-size:.78rem;color:var(--gray-500);margin-top:.3rem;" data-lang="en">{noticia.en.data.dataExibicao}</p>}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="mt-3">
+            <a href="/midia/#noticias" class="card-link" data-lang="pt">Ver todas as notícias</a>
+            <a href="/midia/#noticias" class="card-link" data-lang="en">View all news</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-header left">
+            <p class="eyebrow" data-lang="pt">Agenda</p>
+            <p class="eyebrow" data-lang="en">Calendar</p>
+            <h2 class="section-title" data-lang="pt">Próximos eventos</h2>
+            <h2 class="section-title" data-lang="en">Upcoming events</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="news-list">
+            {eventos.map((evento) => (
+              <div class="news-item">
+                <div class="news-body" style="flex:1;">
+                  <p class="news-tag" data-lang="pt">{evento.data.tag_pt}</p>
+                  <p class="news-tag" data-lang="en">{evento.data.tag_en}</p>
+                  <p class="news-title" data-lang="pt">{evento.data.titulo_pt}</p>
+                  <p class="news-title" data-lang="en">{evento.data.titulo_en}</p>
+                  <p style="font-size:.78rem;color:var(--gray-500);margin-top:.3rem;" data-lang="pt">{evento.data.data_pt}</p>
+                  <p style="font-size:.78rem;color:var(--gray-500);margin-top:.3rem;" data-lang="en">{evento.data.data_en}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="mt-3">
+            <a href="/midia/#eventos" class="card-link" data-lang="pt">Ver todos os eventos</a>
+            <a href="/midia/#eventos" class="card-link" data-lang="en">View all events</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA PARCERIAS ===== -->
+  <section class="section-sm bg-navy">
+    <div class="container">
+      <div class="cta-box" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);">
+        <h2 data-lang="pt">Seja parceiro do CERE</h2>
+        <h2 data-lang="en">Partner with CERE</h2>
+        <p data-lang="pt">Empresas, entidades setoriais e agências de fomento podem colaborar com o CERE em pesquisas aplicadas, projetos de extensão e programas de educação executiva.</p>
+        <p data-lang="en">Companies, sector entities, and funding agencies can collaborate with CERE on applied research, extension projects, and executive education programs.</p>
+        <a href="/parcerias/" class="btn btn-primary" data-lang="pt">Saiba como colaborar</a>
+        <a href="/parcerias/" class="btn btn-primary" data-lang="en">Learn how to collaborate</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer brand="full" allRights>
+    <div class="footer-col">
+      <h4 data-lang="pt">Sobre nós</h4>
+      <h4 data-lang="en">About us</h4>
+      <ul>
+        <li><a href="/sobre/#missao"><span data-lang="pt">Missão</span><span data-lang="en">Mission</span></a></li>
+        <li><a href="/sobre/#pessoas"><span data-lang="pt">Pessoas</span><span data-lang="en">People</span></a></li>
+        <li><a href="/sobre/#contato"><span data-lang="pt">Contato</span><span data-lang="en">Contact</span></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-lang="pt">Educação & Pesquisa</h4>
+      <h4 data-lang="en">Education & Research</h4>
+      <ul>
+        <li><a href="/educacao/#graduacao"><span data-lang="pt">Graduação</span><span data-lang="en">Undergraduate</span></a></li>
+        <li><a href="/educacao/#formacao-capacitacao"><span data-lang="pt">Formação e capacitação</span><span data-lang="en">Training and capacity-building</span></a></li>
+        <li><a href="/pesquisa/#publicacoes"><span data-lang="pt">Publicações</span><span data-lang="en">Publications</span></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-lang="pt">Links úteis</h4>
+      <h4 data-lang="en">Useful links</h4>
+      <ul>
+        <li><a href="/midia/#noticias"><span data-lang="pt">Notícias</span><span data-lang="en">News</span></a></li>
+        <li><a href="/dados/"><span data-lang="pt">Dados de mercado</span><span data-lang="en">Market data</span></a></li>
+        <li><a href="/estudantes/#finance-club">UFMG Finance Club</a></li>
+        <li><a href="/estudantes/#ucj">UFMG Consultoria Júnior (UCJ)</a></li>
+        <li><a href="/parcerias/"><span data-lang="pt">Parcerias e doações</span><span data-lang="en">Partnerships & donations</span></a></li>
+        <li><a href="https://face.ufmg.br" target="_blank" rel="noopener">FACE · UFMG</a></li>
+      </ul>
+    </div>
+  </Footer>
+
+</BaseLayout>

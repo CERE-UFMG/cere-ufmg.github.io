@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+---
+<BaseLayout
+  title="Educação — CERE | UFMG"
+  description="Programas de educação em real estate do CERE: graduação e formação e capacitação."
+>
+
+  <PageHero
+    crumbs={[{ pt: 'Educação', en: 'Education' }]}
+    titlePt="Educação"
+    titleEn="Education"
+    subtitlePt="Formação de excelência em real estate — da graduação à capacitação profissional."
+    subtitleEn="Excellence in real estate education — from undergraduate courses to professional capacity-building."
+  />
+
+  <!-- GRADUAÇÃO -->
+  <section class="section" id="graduacao">
+    <div class="container">
+      <div class="section-header left">
+        <p class="eyebrow" data-lang="pt">Graduação</p>
+        <p class="eyebrow" data-lang="en">Undergraduate</p>
+        <h2 class="section-title" data-lang="pt">Disciplinas de graduação</h2>
+        <h2 class="section-title" data-lang="en">Undergraduate courses</h2>
+        <div class="divider"></div>
+        <p class="section-sub" style="margin:0;" data-lang="pt">Disciplinas ofertadas pelo CERE nos cursos de graduação da FACE e de outras unidades da UFMG.</p>
+        <p class="section-sub" style="margin:0;" data-lang="en">Courses offered by CERE in undergraduate programs at FACE and other UFMG units.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th data-lang="pt">Disciplina</th><th data-lang="en">Course</th>
+              <th data-lang="pt">Curso</th><th data-lang="en">Program</th>
+              <th data-lang="pt">Semestre</th><th data-lang="en">Semester</th>
+              <th data-lang="pt">Carga horária</th><th data-lang="en">Credits</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-lang="pt"><a href="/educacao/economia-imobiliaria/">Economia Imobiliária: Fundamentos, Estratégia e Investimentos</a></td>
+              <td data-lang="en"><a href="/educacao/economia-imobiliaria/">Real Estate Economics: Fundamentals, Strategy, and Investments</a></td>
+              <td data-lang="pt">Ciências Econômicas / Relações Econômicas Internacionais</td>
+              <td data-lang="en">Economics / International Economic Relations</td>
+              <td>2026/1</td>
+              <td>30h</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMAS DE FORMAÇÃO E CAPACITAÇÃO -->
+  <section class="section bg-light" id="formacao-capacitacao">
+    <div class="container">
+      <div class="section-header left">
+        <p class="eyebrow" data-lang="pt">Formação e capacitação</p>
+        <p class="eyebrow" data-lang="en">Training and capacity-building</p>
+        <h2 class="section-title" data-lang="pt">Programas de formação e capacitação</h2>
+        <h2 class="section-title" data-lang="en">Training and capacity-building programs</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <span class="card-tag" data-lang="pt">Formação aberta</span>
+            <span class="card-tag" data-lang="en">Open enrollment</span>
+            <h3 class="card-title" data-lang="pt">Minicursos e oficinas</h3>
+            <h3 class="card-title" data-lang="en">Short courses and workshops</h3>
+            <p class="card-text" data-lang="pt">Oferta semestral de minicursos (8 a 16 horas) sobre avaliação de imóveis, leitura de dados urbanos, tributação imobiliária e mercado de capitais imobiliário. Destinados a estudantes, profissionais do setor público e privado e qualquer cidadão interessado.</p>
+            <p class="card-text" data-lang="en">Semester-based short courses (8 to 16 hours) on real estate appraisal, urban data literacy, real estate taxation, and the real estate capital market. Open to students, public and private sector professionals, and any interested member of the public.</p>
+            <p class="card-date" data-lang="pt">Formato híbrido</p>
+            <p class="card-date" data-lang="en">Hybrid format</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <span class="card-tag" data-lang="pt">Capacitação técnica</span>
+            <span class="card-tag" data-lang="en">Technical training</span>
+            <h3 class="card-title" data-lang="pt">Capacitação de municípios em avaliação imobiliária</h3>
+            <h3 class="card-title" data-lang="en">Municipal training in property appraisal</h3>
+            <p class="card-text" data-lang="pt">Programa específico de capacitação técnica para servidores responsáveis pela avaliação de imóveis e gestão tributária (IPTU, ITBI e ITCD).</p>
+            <p class="card-text" data-lang="en">A dedicated technical training program for public servants responsible for property appraisal and tax administration (IPTU, ITBI, and ITCD).</p>
+            <p class="card-date" data-lang="pt">Público: servidores municipais</p>
+            <p class="card-date" data-lang="en">Audience: municipal civil servants</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <span class="card-tag" data-lang="pt">Educação e cidadania</span>
+            <span class="card-tag" data-lang="en">Education and citizenship</span>
+            <h3 class="card-title" data-lang="pt">Formação para estudantes e comunidades</h3>
+            <h3 class="card-title" data-lang="en">Training for students and communities</h3>
+            <p class="card-text" data-lang="pt">Atividades de educação financeira e letramento urbano voltadas a estudantes de escolas públicas e comunidades da RMBH, abordando direito à moradia, funcionamento do mercado imobiliário e leitura crítica de dados urbanos.</p>
+            <p class="card-text" data-lang="en">Financial education and urban literacy activities for public school students and communities in the Belo Horizonte Metropolitan Region, covering the right to housing, how the real estate market works, and critical reading of urban data.</p>
+            <p class="card-date" data-lang="pt">Público: estudantes e comunidades da RMBH</p>
+            <p class="card-date" data-lang="en">Audience: students and communities in the BH Metropolitan Region</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="/sobre/#contato" class="btn btn-primary" data-lang="pt">Solicitar informações</a>
+        <a href="/sobre/#contato" class="btn btn-primary" data-lang="en">Request information</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer>
+    <div class="footer-col">
+      <h4 data-lang="pt">Educação</h4><h4 data-lang="en">Education</h4>
+      <ul>
+        <li><a href="#graduacao"><span data-lang="pt">Graduação</span><span data-lang="en">Undergraduate</span></a></li>
+        <li><a href="#formacao-capacitacao"><span data-lang="pt">Formação e capacitação</span><span data-lang="en">Training and capacity-building</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Pesquisa</h4><h4 data-lang="en">Research</h4>
+      <ul>
+        <li><a href="/pesquisa/#publicacoes"><span data-lang="pt">Publicações</span><span data-lang="en">Publications</span></a></li>
+        <li><a href="/pesquisa/#vetores"><span data-lang="pt">Vetores de pesquisa</span><span data-lang="en">Research areas</span></a></li>
+        <li><a href="/dados/"><span data-lang="pt">Dados de mercado</span><span data-lang="en">Market data</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Links úteis</h4><h4 data-lang="en">Useful links</h4>
+      <ul>
+        <li><a href="/sobre/"><span data-lang="pt">Sobre o CERE</span><span data-lang="en">About CERE</span></a></li>
+        <li><a href="/parcerias/"><span data-lang="pt">Parcerias</span><span data-lang="en">Partnerships</span></a></li>
+        <li><a href="/estudantes/"><span data-lang="pt">Estudantes</span><span data-lang="en">Students</span></a></li>
+        <li><a href="https://face.ufmg.br" target="_blank" rel="noopener">FACE · UFMG</a></li>
+      </ul>
+    </div>
+  </Footer>
+
+</BaseLayout>

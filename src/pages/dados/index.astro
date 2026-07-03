@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+---
+<BaseLayout
+  title="Dados e Indicadores — CERE | UFMG"
+  description="Índice de Preços Imobiliários CERE-UFMG/IPEAD e Notas ao Mercado e Policy Briefings do CERE/UFMG."
+>
+
+  <PageHero
+    crumbs={[{ pt: 'Dados e Indicadores', en: 'Data & Indicators' }]}
+    titlePt="Dados e Indicadores"
+    titleEn="Data & Indicators"
+    subtitlePt="Índice de Preços Imobiliários CERE-UFMG/IPEAD e Notas ao Mercado e Policy Briefings."
+    subtitleEn="CERE-UFMG/IPEAD Real Estate Price Index and Market Notes and Policy Briefings."
+  />
+
+  <!-- ÍNDICE DE PREÇOS IMOBILIÁRIOS -->
+  <section class="section" id="indice-precos">
+    <div class="container">
+      <div class="section-header left">
+        <p class="eyebrow" data-lang="pt">Índice de preços</p>
+        <p class="eyebrow" data-lang="en">Price index</p>
+        <h2 class="section-title" data-lang="pt">Índice de Preços Imobiliários CERE-UFMG/IPEAD</h2>
+        <h2 class="section-title" data-lang="en">CERE-UFMG/IPEAD Real Estate Price Index</h2>
+        <div class="divider"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+        <div class="prose">
+          <p data-lang="pt">A Fundação IPEAD/UFMG realiza, desde 1986, a Pesquisa do Mercado Imobiliário de Belo Horizonte, com levantamento mensal de dados primários de preços e oferta nos mercados de construção, comercialização e aluguel no município. A Pesquisa de Comercialização apura preço de venda à vista, quantidade ofertada, novos empreendimentos e estágio de construção de uma amostra de construtoras por porte; a Pesquisa de Aluguéis monitora mensalmente os imóveis ofertados e seus valores em imobiliárias cadastradas.</p>
+          <p data-lang="en">Since 1986, Fundação IPEAD/UFMG has conducted the Belo Horizonte Real Estate Market Survey, gathering monthly primary data on prices and supply in the construction, sales, and rental markets within the municipality. The Sales Survey tracks cash sale prices, units offered, new developments, and construction stage across a sample of builders by size; the Rental Survey monitors monthly listings and rental values among registered real estate agencies.</p>
+        </div>
+        <div>
+          <span class="badge badge-navy mb-2" data-lang="pt">Em desenvolvimento</span>
+          <span class="badge badge-navy mb-2" data-lang="en">In development</span>
+          <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:2rem;margin-top:.75rem;">
+            <h3 style="color:var(--navy);font-weight:700;margin-bottom:1rem;font-size:1rem;" data-lang="pt">Insumos do índice</h3>
+            <h3 style="color:var(--navy);font-weight:700;margin-bottom:1rem;font-size:1rem;" data-lang="en">Index inputs</h3>
+            <ul style="list-style:none;">
+              <li style="padding:.6rem 0;border-bottom:1px solid var(--gray-200);display:flex;gap:.75rem;align-items:start;">
+                <span style="color:var(--red);font-weight:700;flex-shrink:0;">→</span>
+                <span data-lang="pt">Série histórica do IPEAD para a RMBH — a mais longa do país.</span>
+                <span data-lang="en">IPEAD's historical series for the Belo Horizonte Metropolitan Region — the longest in the country.</span>
+              </li>
+              <li style="padding:.6rem 0;border-bottom:1px solid var(--gray-200);display:flex;gap:.75rem;align-items:start;">
+                <span style="color:var(--red);font-weight:700;flex-shrink:0;">→</span>
+                <span data-lang="pt">Novos dados para demais geografias brasileiras, em parceria com agentes privados do mercado.</span>
+                <span data-lang="en">New data for other Brazilian geographies, in partnership with private market players.</span>
+              </li>
+              <li style="padding:.6rem 0;display:flex;gap:.75rem;align-items:start;">
+                <span style="color:var(--red);font-weight:700;flex-shrink:0;">→</span>
+                <span data-lang="pt">Metodologias de avaliação em massa de imóveis desenvolvidas no Cedeplar/FACE/UFMG e no IPEAD.</span>
+                <span data-lang="en">Mass real estate appraisal methodologies developed at Cedeplar/FACE/UFMG and IPEAD.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTAS AO MERCADO E POLICY BRIEFINGS -->
+  <section class="section bg-light" id="notas-mercado">
+    <div class="container">
+      <div class="section-header left">
+        <p class="eyebrow" data-lang="pt">Notas e briefings</p>
+        <p class="eyebrow" data-lang="en">Notes & briefings</p>
+        <h2 class="section-title" data-lang="pt">Notas ao Mercado e Policy Briefings</h2>
+        <h2 class="section-title" data-lang="en">Market Notes and Policy Briefings</h2>
+        <div class="divider"></div>
+        <p class="section-sub" style="margin:0;" data-lang="pt">Produção de textos curtos, cientificamente embasados, sobre temas de grande interesse ao mercado e à sociedade por meio da política pública.</p>
+        <p class="section-sub" style="margin:0;" data-lang="en">Short, scientifically grounded pieces on topics of major interest to the market and to society through public policy.</p>
+      </div>
+      <div class="cta-box">
+        <h2 data-lang="pt">Em breve</h2>
+        <h2 data-lang="en">Coming soon</h2>
+        <p data-lang="pt">As primeiras notas ao mercado e policy briefings do CERE serão publicados nesta página.</p>
+        <p data-lang="en">CERE's first market notes and policy briefings will be published on this page.</p>
+        <a href="/sobre/#contato" class="btn btn-primary" data-lang="pt">Receber novidades por e-mail</a>
+        <a href="/sobre/#contato" class="btn btn-primary" data-lang="en">Get updates by e-mail</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer>
+    <div class="footer-col">
+      <h4 data-lang="pt">Dados</h4><h4 data-lang="en">Data</h4>
+      <ul>
+        <li><a href="#indice-precos"><span data-lang="pt">Índice de Preços Imobiliários</span><span data-lang="en">Real Estate Price Index</span></a></li>
+        <li><a href="#notas-mercado"><span data-lang="pt">Notas ao Mercado</span><span data-lang="en">Market Notes</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Pesquisa & Educação</h4><h4 data-lang="en">Research & Education</h4>
+      <ul>
+        <li><a href="/pesquisa/"><span data-lang="pt">Publicações</span><span data-lang="en">Publications</span></a></li>
+        <li><a href="/educacao/"><span data-lang="pt">Educação</span><span data-lang="en">Education</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Links úteis</h4><h4 data-lang="en">Useful links</h4>
+      <ul>
+        <li><a href="/sobre/"><span data-lang="pt">Sobre o CERE</span><span data-lang="en">About CERE</span></a></li>
+        <li><a href="/parcerias/"><span data-lang="pt">Parcerias</span><span data-lang="en">Partnerships</span></a></li>
+        <li><a href="https://face.ufmg.br" target="_blank" rel="noopener">FACE · UFMG</a></li>
+      </ul>
+    </div>
+  </Footer>
+
+</BaseLayout>
