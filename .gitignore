@@ -6,6 +6,7 @@ dist/
 
 # cache do Astro
 .astro/
+.claude/
 
 # logs
 npm-debug.log*
